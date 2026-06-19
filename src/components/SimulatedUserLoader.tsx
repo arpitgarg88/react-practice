@@ -1,30 +1,30 @@
-import { useSimulatedUser } from "../hooks/useSimulatedUser";
+import { useStaleSafeAsync } from "../hooks/useStaleSafeAsync";
 
 export function SimulatedUserLoader() {
-  const { state, user, errorMessage, loadSuccess, loadFailure, reset } =
-    useSimulatedUser();
-  const isLoading = state === "loading";
+  const { status, resultLabel, errorMessage, runFast, runSlow, cancel } =
+    useStaleSafeAsync();
+
+  const isLoading = status === "loading";
 
   return (
     <div className="section">
       <h2>Simulated User Loader</h2>
 
       <div style={{ display: "flex", gap: "10px", marginBottom: "10px" }}>
-        <button type="button" disabled={isLoading} onClick={loadSuccess}>
-          Load success
+        <button type="button" disabled={isLoading} onClick={runFast}>
+          Run fast
         </button>
-        <button type="button" disabled={isLoading} onClick={loadFailure}>
-          Load failure
+        <button type="button" disabled={isLoading} onClick={runSlow}>
+          Run slow
         </button>
-        <button type="button" disabled={isLoading} onClick={reset}>
-          Reset
+        <button type="button" onClick={cancel}>
+          Cancel
         </button>
       </div>
 
-      {state === "loading" && <p>Loading...</p>}
-      {state === "success" && user && <p>{user.name}</p>}
-      {state === "error" && <p style={{ color: "red" }}>{errorMessage}</p>}
-      {state === "idle" && <p>No user loaded</p>}
+      <p>Status: {status}</p>
+      {resultLabel && <p>{resultLabel}</p>}
+      {errorMessage && <p style={{ color: "red" }}>{errorMessage}</p>}
     </div>
   );
 }

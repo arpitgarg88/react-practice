@@ -7,7 +7,6 @@ export function UserCard({ user }: { user: User }) {
         width: "400px",
         border: "1px solid #2e303a",
         padding: "10px",
-        borderRadius: "10px",
         marginBottom: "10px",
       }}
     >

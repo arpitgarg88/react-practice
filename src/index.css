@@ -25,9 +25,9 @@
     --bg: #16171d;
     --border: #2e303a;
     --code-bg: #1f2028;
-    --accent: #c084fc;
-    --accent-bg: rgba(192, 132, 252, 0.15);
-    --accent-border: rgba(192, 132, 252, 0.5);
+    --accent: #464646;
+    --accent-bg: rgba(160, 160, 160, 0.15);
+    --accent-border: rgba(182, 182, 182, 0.5);
     --social-bg: rgba(47, 48, 58, 0.5);
     --shadow:
       rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
@@ -75,7 +75,6 @@ code,
 .counter {
   font-family: var(--mono);
   display: inline-flex;
-  border-radius: 4px;
   color: var(--text-h);
 }
 
@@ -89,13 +88,11 @@ code {
 .section {
   margin-bottom: 20px;
   padding: 20px;
-  border-radius: 10px;
   border: 1px solid #2e303a;
 }
 
 button {
   padding: 5px 10px;
-  border-radius: 5px;
   border: 1px solid #2e303a;
   background: #2e303a;
   color: #f3f4f6;
@@ -103,14 +100,13 @@ button {
 }
 
 button.selected {
-    background: #6200ff;
+    background: #111111;
     border-color: #2e303a;
     color: #f3f4f6;
   }
 
 input {
   padding: 3px 10px;
-  border-radius: 5px;
   border: 1px solid #2e303a;
   background: #2e303a;
   color: #f3f4f6;
@@ -118,7 +114,6 @@ input {
 
 select {
   padding: 3px 10px;
-  border-radius: 5px;
   border: 1px solid #2e303a;
   background: #2e303a;
   color: #f3f4f6;
